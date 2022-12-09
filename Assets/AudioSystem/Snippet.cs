@@ -1,12 +1,14 @@
 ﻿using System;
 
 [Serializable]
-public class AudioSettingsCustom
+public class Snippet
 {
     public float Volume;
     public float Pitch;
 
-    public AudioSettingsCustom(float volume, float pitch)
+    public float StartPlay;
+
+    public Snippet(float volume, float pitch)
     {
         Volume = volume;
         Pitch = pitch;

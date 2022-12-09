@@ -21,14 +21,15 @@ public class AudioSystemEditor : Editor
     {
         _audioSystem = (AudioSystem)target;
         _pathToEnumFile = AssetDatabase.GUIDToAssetPath(AssetDatabase.FindAssets(_audioFile)[0]);
+        AudioSection.DeleteAudio += RemoveAudio;
     }
 
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
+        //DrawDefaultInspector();
 
         _audioSystem.Audios = RefreshAudios(_audioSystem.Audios);
-        
+        AudioSection.Draw(_audioSystem.Audios);
 
         DrawNewAudioSection();
     }
@@ -37,9 +38,14 @@ public class AudioSystemEditor : Editor
 
     private void DrawNewAudioSection()
     {
-        _audioName = EditorGUILayout.TextField("Name", _audioName);
+        GUILayout.Space(15f);
 
+        //GUILayout.BeginHorizontal();
+
+        _audioName = EditorGUILayout.TextField("Name", _audioName);
         DrawAddButton();
+
+        //GUILayout.EndHorizontal();
     }
 
     private void DrawAddButton()
@@ -78,6 +84,14 @@ public class AudioSystemEditor : Editor
         _audioName = _audioBaseName;
     }
 
+    private void RemoveAudio(AudioName audioName)
+    {
+        if (!EnumEditor.TryRemoveFromFile(audioName.ToString(), _pathToEnumFile))
+            return;
+
+        Refresh();
+    }
+
     private void Refresh()
     {
         Debug.Log("WAIT");
@@ -94,12 +108,10 @@ public class AudioSystemEditor : Editor
         for (int i = 0; i < rountAudio; i++)
         {
             AudioName audioName = (AudioName)i;
-            Audio audio = TryRestoreAudio(oldAudios, audioName.ToString());
+            Audio audio = TryRestoreAudio(oldAudios, audioName);
 
-            if(audio == null)
-            {
+            if (audio == null)
                 audio = CreateNewAudio(audioName);
-            }
 
             routes.Add(audio);
         }
@@ -107,9 +119,16 @@ public class AudioSystemEditor : Editor
         return routes;
     }
 
-    private Audio TryRestoreAudio(List<Audio> oldAudios, string audioName)
+    private Audio TryRestoreAudio(List<Audio> oldAudios, AudioName audioName)
     {
-        return oldAudios.FirstOrDefault(x => x.Name.ToString() == audioName);
+        Audio audio;
+
+        if (oldAudios.Count == 0)
+            audio = CreateNewAudio(audioName);
+        else
+            audio =  oldAudios.FirstOrDefault(x => x.Name == audioName);
+
+        return audio;
     }
 
     private Audio CreateNewAudio(AudioName audioName)
@@ -117,7 +136,7 @@ public class AudioSystemEditor : Editor
         Audio route = new Audio
         {
             Name = audioName,
-            AudioSettingsCustom = new AudioSettingsCustom(1f, 1f)
+            Snippets = new List<Snippet> { new Snippet(1f, 1f) }
         };
 
         return route;
