@@ -8,9 +8,10 @@ public class Snippet
 
     public float StartPlay;
 
-    public Snippet(float volume, float pitch)
+    public Snippet(float volume, float pitch, float startPlay = 0f)
     {
         Volume = volume;
         Pitch = pitch;
+        StartPlay = startPlay;
     } 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &131175104
 MonoBehaviour:
@@ -169,12 +169,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Audios:
   - ID: 
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 764f4747e7f3f6b44bebeedd3f4c2c87, type: 3}
     Name: 0
     Snippets:
     - Volume: 1
       Pitch: 1
       StartPlay: 0
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 6.288875
+  - ID: 
+    AudioClip: {fileID: 8300000, guid: be503c5dbbe6d05499fbb9333408cffc, type: 3}
+    Name: 1
+    Snippets:
+    - Volume: 0.681
+      Pitch: 1
+      StartPlay: 1.97
+    - Volume: 0.752
+      Pitch: 1
+      StartPlay: 2.5446937
+    - Volume: 0.752
+      Pitch: 1
+      StartPlay: 2.5446937
+    - Volume: 0.752
+      Pitch: 1
+      StartPlay: 2.2573469
+  - ID: 
+    AudioClip: {fileID: 8300000, guid: bee8b4fe34b90f44c86eca3b281e7a23, type: 3}
+    Name: 2
+    Snippets:
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 4.29
+    - Volume: 1
+      Pitch: 0.896
+      StartPlay: 4.44
+    - Volume: 1
+      Pitch: 0.774
+      StartPlay: 6.13
+    - Volume: 1
+      Pitch: 0.734
+      StartPlay: 7.343243
+    - Volume: 1
+      Pitch: 0.589
+      StartPlay: 8.06
+    - Volume: 1
+      Pitch: 0.496
+      StartPlay: 8.56
+  - ID: 
+    AudioClip: {fileID: 8300000, guid: 9397a7ef5e51fbf43a79438ffdb53d6b, type: 3}
+    Name: 3
+    Snippets:
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 7.61
+  - ID: 
+    AudioClip: {fileID: 8300000, guid: 1fc577a67145e294291bfe06ee0bf9f4, type: 3}
+    Name: 4
+    Snippets:
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 10
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 10.06204
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 10.92408
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 11.78612
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 12.24816
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 12.7102
+  - ID: 
+    AudioClip: {fileID: 8300000, guid: d618bafd6eb997d44b3272eef6fe52ba, type: 3}
+    Name: 5
+    Snippets:
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 12.89
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 13.6
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 14
+    - Volume: 1
+      Pitch: 1
+      StartPlay: 14.3
+    - Volume: 1
+      Pitch: 0.548
+      StartPlay: 14.9
 --- !u!1 &661525120
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,97 +348,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1817207352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1817207354}
-  - component: {fileID: 1817207353}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1817207353
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817207352}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1817207354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817207352}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}

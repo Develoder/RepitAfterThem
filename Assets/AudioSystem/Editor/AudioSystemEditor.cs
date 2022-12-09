@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 [CustomEditor(typeof(AudioSystem))]
@@ -32,6 +33,12 @@ public class AudioSystemEditor : Editor
         AudioSection.Draw(_audioSystem.Audios);
 
         DrawNewAudioSection();
+
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(_audioSystem);
+            EditorSceneManager.MarkSceneDirty(_audioSystem.gameObject.scene);
+        }
     }
 
     

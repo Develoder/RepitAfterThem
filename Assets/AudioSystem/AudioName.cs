@@ -1,4 +1,9 @@
 public enum AudioName
 {
-	Background,
+	Bel,
+	Woof,
+	Crowing,
+	UWUNoOLD,
+	UWUOrig,
+	JonS,
 }

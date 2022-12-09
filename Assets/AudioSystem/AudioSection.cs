@@ -23,7 +23,7 @@ public static class AudioSection
             GUILayout.BeginHorizontal();
 
             DrawDeleteAudio(audio);
-            EditorGUILayout.LabelField(name);
+            EditorGUILayout.LabelField($"{name} ~ {(audio.AudioClip == null ? "null" :  audio.AudioClip.length)}");
             DrawPlayAudio(audio);
             if (isHide)
                 DrawShowButton(audio.Name);
@@ -139,7 +139,11 @@ public static class AudioSection
     
     private static void AddSnippet(Audio audio, int index)
     {
-        audio.Snippets.Insert(index + 1, new Snippet(1f, 1f));
+        Snippet lastAudio = audio.Snippets[audio.Snippets.Count - 1];
+        audio.Snippets.Insert(index + 1, new Snippet(
+            lastAudio.Volume, 
+            lastAudio.Pitch,
+            lastAudio.StartPlay + audio.AudioClip.length));
     }
 
 }
